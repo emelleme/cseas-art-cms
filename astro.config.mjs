@@ -25,4 +25,6 @@ export default defineConfig({
 		}),
 	],
 	devToolbar: { enabled: false },
+	// Admin authentication is handled via middleware
+	// See src/middleware/auth.ts for password configuration
 });
