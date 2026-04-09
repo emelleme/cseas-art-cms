@@ -27,13 +27,6 @@
 					"searchable": true
 				},
 				{
-					"slug": "slug",
-					"label": "URL Slug",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
 					"slug": "subtitle",
 					"label": "Subtitle",
 					"type": "string"
@@ -76,14 +69,6 @@
 					"label": "Covenant Preview (JSON)",
 					"type": "json",
 					"help": "Preview of attestation data for CAT-721"
-				},
-				{
-					"slug": "status",
-					"label": "Status",
-					"type": "select",
-					"validation": {
-						"options": ["draft", "live", "archived"]
-					}
 				}
 			]
 		},
@@ -96,13 +81,6 @@
 				{
 					"slug": "title",
 					"label": "Title",
-					"type": "string",
-					"required": true,
-					"searchable": true
-				},
-				{
-					"slug": "slug",
-					"label": "URL Slug",
 					"type": "string",
 					"required": true,
 					"searchable": true
@@ -192,14 +170,6 @@
 					"label": "Content Body (URI or data)",
 					"type": "text",
 					"help": "URI to content or inline data for CAT-721"
-				},
-				{
-					"slug": "status",
-					"label": "Status",
-					"type": "select",
-					"validation": {
-						"options": ["draft", "live", "minted"]
-					}
 				}
 			]
 		}
@@ -268,7 +238,6 @@
 				"status": "published",
 				"data": {
 					"name": "Sea Sirens",
-					"slug": "sea-sirens",
 					"subtitle": "DIGITAL ART COLLECTION",
 					"description": [
 						{
@@ -295,14 +264,10 @@
 						"protocol": "CAT-721",
 						"attestation_type": "ownership_covenant",
 						"version": "1.0"
-					},
-					"status": "live"
+					}
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
-				"taxonomies": {
-					"category": ["digital-art"],
-					"tag": ["sea-sirens", "ocean"]
-				}
+				"taxonomies": {}
 			}
 		],
 		"opcat_artworks": [
@@ -312,7 +277,6 @@
 				"status": "published",
 				"data": {
 					"title": "Triton",
-					"slug": "triton",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-triton",
@@ -349,8 +313,7 @@
 						{ "trait_type": "Type", "value": "Digital Art" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/triton.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/triton.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -364,7 +327,6 @@
 				"status": "published",
 				"data": {
 					"title": "Surfrider Noir",
-					"slug": "surfridernoir",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-surfridernoir",
@@ -402,8 +364,7 @@
 						{ "trait_type": "Style", "value": "Noir" }
 					],
 					"content_type": "image/png",
-					"content_body": "https://currentseas.xyz/images/seasirens/surfridernoir.png",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/surfridernoir.png"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -417,7 +378,6 @@
 				"status": "published",
 				"data": {
 					"title": "Change Green",
-					"slug": "changegreen",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-changegreen",
@@ -455,8 +415,7 @@
 						{ "trait_type": "Color", "value": "Green" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/changegreen.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/changegreen.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -470,7 +429,6 @@
 				"status": "published",
 				"data": {
 					"title": "Change Red",
-					"slug": "changered",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-changered",
@@ -508,8 +466,7 @@
 						{ "trait_type": "Color", "value": "Red" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/changered.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/changered.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -523,7 +480,6 @@
 				"status": "published",
 				"data": {
 					"title": "Change Pink",
-					"slug": "changepink",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-changepink",
@@ -561,8 +517,7 @@
 						{ "trait_type": "Color", "value": "Pink" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/changepink.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/changepink.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -576,7 +531,6 @@
 				"status": "published",
 				"data": {
 					"title": "Malfunction",
-					"slug": "malfunction",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-malfunction",
@@ -614,8 +568,7 @@
 						{ "trait_type": "Style", "value": "Glitch" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/malfunction.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/malfunction.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
@@ -629,7 +582,6 @@
 				"status": "published",
 				"data": {
 					"title": "Bombs",
-					"slug": "bombs",
 					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
 						"id": "seed-image-bombs",
@@ -666,8 +618,7 @@
 						{ "trait_type": "Type", "value": "Digital Art" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "https://currentseas.xyz/images/seasirens/bombs.jpg",
-					"status": "live"
+					"content_body": "https://currentseas.xyz/images/seasirens/bombs.jpg"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
 				"taxonomies": {
