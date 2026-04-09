@@ -66,7 +66,9 @@
 					"slug": "minter_type",
 					"label": "Minter Type",
 					"type": "select",
-					"options": ["open", "closed"],
+					"validation": {
+						"options": ["open", "closed"]
+					},
 					"help": "Open = anyone can mint, Closed = only issuer can mint"
 				},
 				{
@@ -79,7 +81,9 @@
 					"slug": "status",
 					"label": "Status",
 					"type": "select",
-					"options": ["draft", "live", "archived"]
+					"validation": {
+						"options": ["draft", "live", "archived"]
+					}
 				}
 			]
 		},
@@ -106,9 +110,11 @@
 				{
 					"slug": "collection",
 					"label": "Collection",
-					"type": "relation",
-					"collection": "opcat_collections",
-					"required": true
+					"type": "reference",
+					"required": true,
+					"options": {
+						"collection": "opcat_collections"
+					}
 				},
 				{
 					"slug": "featured_image",
@@ -124,7 +130,7 @@
 				{
 					"slug": "splat_url",
 					"label": "Gaussian Splat URL",
-					"type": "url",
+					"type": "string",
 					"help": "URL to Gaussian splat for photorealistic XR"
 				},
 				{
@@ -191,7 +197,9 @@
 					"slug": "status",
 					"label": "Status",
 					"type": "select",
-					"options": ["draft", "live", "minted"]
+					"validation": {
+						"options": ["draft", "live", "minted"]
+					}
 				}
 			]
 		}
@@ -275,7 +283,12 @@
 						}
 					],
 					"theme_gradient": "linear-gradient(135deg, #001a33 0%, #003366 50%, #004080 100%)",
-					"featured_model": "/models/tritonsiren.glb",
+					"featured_model": {
+						"id": "seed-model-featured-sea-sirens",
+						"src": "https://currentseas.xyz/models/tritonsiren.glb",
+						"filename": "tritonsiren.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"opcat_contract": "",
 					"minter_type": "open",
 					"covenant_preview": {
@@ -300,15 +313,18 @@
 				"data": {
 					"title": "Triton",
 					"slug": "triton",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/triton.jpg",
-							"alt": "Triton - Sea Sirens",
-							"filename": "triton.jpg"
-						}
+						"id": "seed-image-triton",
+						"src": "https://currentseas.xyz/images/seasirens/triton.jpg",
+						"alt": "Triton - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/triton.glb",
+					"model_3d": {
+						"id": "seed-model-triton",
+						"src": "https://currentseas.xyz/models/seasirens/triton.glb",
+						"filename": "triton.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -333,7 +349,7 @@
 						{ "trait_type": "Type", "value": "Digital Art" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/triton.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/triton.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -349,15 +365,18 @@
 				"data": {
 					"title": "Surfrider Noir",
 					"slug": "surfridernoir",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/surfridernoir.png",
-							"alt": "Surfrider Noir - Sea Sirens",
-							"filename": "surfridernoir.png"
-						}
+						"id": "seed-image-surfridernoir",
+						"src": "https://currentseas.xyz/images/seasirens/surfridernoir.png",
+						"alt": "Surfrider Noir - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/surfridernoir.glb",
+					"model_3d": {
+						"id": "seed-model-surfridernoir",
+						"src": "https://currentseas.xyz/models/seasirens/surfridernoir.glb",
+						"filename": "surfridernoir.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -383,7 +402,7 @@
 						{ "trait_type": "Style", "value": "Noir" }
 					],
 					"content_type": "image/png",
-					"content_body": "/images/seasirens/surfridernoir.png",
+					"content_body": "https://currentseas.xyz/images/seasirens/surfridernoir.png",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -399,15 +418,18 @@
 				"data": {
 					"title": "Change Green",
 					"slug": "changegreen",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/changegreen.jpg",
-							"alt": "Change Green - Sea Sirens",
-							"filename": "changegreen.jpg"
-						}
+						"id": "seed-image-changegreen",
+						"src": "https://currentseas.xyz/images/seasirens/changegreen.jpg",
+						"alt": "Change Green - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/changegreen.glb",
+					"model_3d": {
+						"id": "seed-model-changegreen",
+						"src": "https://currentseas.xyz/models/seasirens/changegreen.glb",
+						"filename": "changegreen.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -433,7 +455,7 @@
 						{ "trait_type": "Color", "value": "Green" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/changegreen.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/changegreen.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -449,15 +471,18 @@
 				"data": {
 					"title": "Change Red",
 					"slug": "changered",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/changered.jpg",
-							"alt": "Change Red - Sea Sirens",
-							"filename": "changered.jpg"
-						}
+						"id": "seed-image-changered",
+						"src": "https://currentseas.xyz/images/seasirens/changered.jpg",
+						"alt": "Change Red - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/changered.glb",
+					"model_3d": {
+						"id": "seed-model-changered",
+						"src": "https://currentseas.xyz/models/seasirens/changered.glb",
+						"filename": "changered.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -483,7 +508,7 @@
 						{ "trait_type": "Color", "value": "Red" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/changered.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/changered.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -499,15 +524,18 @@
 				"data": {
 					"title": "Change Pink",
 					"slug": "changepink",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/changepink.jpg",
-							"alt": "Change Pink - Sea Sirens",
-							"filename": "changepink.jpg"
-						}
+						"id": "seed-image-changepink",
+						"src": "https://currentseas.xyz/images/seasirens/changepink.jpg",
+						"alt": "Change Pink - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/changepink.glb",
+					"model_3d": {
+						"id": "seed-model-changepink",
+						"src": "https://currentseas.xyz/models/seasirens/changepink.glb",
+						"filename": "changepink.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -533,7 +561,7 @@
 						{ "trait_type": "Color", "value": "Pink" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/changepink.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/changepink.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -549,15 +577,18 @@
 				"data": {
 					"title": "Malfunction",
 					"slug": "malfunction",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/malfunction.jpg",
-							"alt": "Malfunction - Sea Sirens",
-							"filename": "malfunction.jpg"
-						}
+						"id": "seed-image-malfunction",
+						"src": "https://currentseas.xyz/images/seasirens/malfunction.jpg",
+						"alt": "Malfunction - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/malfunction.glb",
+					"model_3d": {
+						"id": "seed-model-malfunction",
+						"src": "https://currentseas.xyz/models/seasirens/malfunction.glb",
+						"filename": "malfunction.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -583,7 +614,7 @@
 						{ "trait_type": "Style", "value": "Glitch" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/malfunction.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/malfunction.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],
@@ -599,15 +630,18 @@
 				"data": {
 					"title": "Bombs",
 					"slug": "bombs",
-					"collection": "collection-sea-sirens",
+					"collection": "$ref:collection-sea-sirens",
 					"featured_image": {
-						"$media": {
-							"url": "/images/seasirens/bombs.jpg",
-							"alt": "Bombs - Sea Sirens",
-							"filename": "bombs.jpg"
-						}
+						"id": "seed-image-bombs",
+						"src": "https://currentseas.xyz/images/seasirens/bombs.jpg",
+						"alt": "Bombs - Sea Sirens"
 					},
-					"model_3d": "/models/seasirens/bombs.glb",
+					"model_3d": {
+						"id": "seed-model-bombs",
+						"src": "https://currentseas.xyz/models/seasirens/bombs.glb",
+						"filename": "bombs.glb",
+						"mimeType": "model/gltf-binary"
+					},
 					"description": [
 						{
 							"_type": "block",
@@ -632,7 +666,7 @@
 						{ "trait_type": "Type", "value": "Digital Art" }
 					],
 					"content_type": "image/jpeg",
-					"content_body": "/images/seasirens/bombs.jpg",
+					"content_body": "https://currentseas.xyz/images/seasirens/bombs.jpg",
 					"status": "live"
 				},
 				"bylines": [{ "byline": "byline-seasirens" }],

@@ -68,12 +68,18 @@ This CMS manages Reality Token collections and artworks for the CurrentSeas plat
 # Install dependencies
 pnpm install
 
-# Login to Cloudflare
-wrangler login
-
-# Seed the database with initial data
-wrangler d1 execute cseas-db --file=seed/seed.json
+# Start the CMS locally
+pnpm dev
 ```
+
+Then open the Emdash setup flow at:
+
+```text
+http://localhost:4321/_emdash/admin/setup
+```
+
+This project auto-loads the seed from `seed/seed.json` via the `emdash.seed` setting in `package.json`.
+The setup wizard runs the required migrations and applies the seed for you.
 
 ### Development
 
@@ -96,12 +102,12 @@ Media files are stored in the `cseas-assets` R2 bucket.
 
 ## Admin Access
 
-The admin panel is protected with simple password authentication.
+Use the built-in Emdash admin URLs:
 
-- **URL**: `https://your-cms-domain.com/admin`
-- **Password**: `admin`
+- **Setup URL**: `https://your-cms-domain.com/_emdash/admin/setup`
+- **Admin URL**: `https://your-cms-domain.com/_emdash/admin`
 
-To change the password, edit `src/middleware/auth.ts`.
+For the Sea Sirens gallery seed, image and model fields currently point at hosted CurrentSeas assets so the gallery can be exercised without uploading duplicate media into this CMS project first.
 
 ## API
 
